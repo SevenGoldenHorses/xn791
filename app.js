@@ -22,7 +22,7 @@ function BOMBA(tweet) {
 	console.log(testoTweet);
 
 	if ( tweet.user.screen_name !== 'sidolinz' ) { 	
-		if( testoTweet.includes('RT ') == false && inRisposta === null ){
+		if( testoTweet.includes('RT ') == false && inRisposta === null || testoTweet.includes('RT @'+tweet.user.screen_name) == true && inRisposta === null){
 			// Fai la funzione Retweetta e metti mi piace
 			console.log(tweet);
 			function RTF(){
@@ -93,7 +93,7 @@ var stealthcrypto = '955280820058509312';
 
 
 //parte la connessione con 
-var stream = T.stream('statuses/filter', { follow:  ( ' 936204840878866432 , 913327957904695297 , 929817868673437697 , 879588404693827585 , 2351528224 , 943622133506347008 , 887925114100043776 , 174606919, 953264830454095872 , 888326326284890113 , 957565773387616256 , 950095434952921090 , 904533387729358854 , 955280820058509312 ' ) });
+var stream = T.stream('statuses/filter', { follow:  ( '928375322017382401 , 936204840878866432 , 913327957904695297 , 929817868673437697 , 879588404693827585 , 2351528224 , 943622133506347008 , 887925114100043776 , 174606919, 953264830454095872 , 888326326284890113 , 957565773387616256 , 950095434952921090 , 904533387729358854 , 955280820058509312 ' ) });
 console.log('Connesisone al utente avvenuta correttamente.\n');
 //ogni volta che l'account twitta lui fa partire la funzione Bomba
 stream.on('tweet', BOMBA );
